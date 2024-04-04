@@ -27,6 +27,3 @@ __style__: (formatting, missing semi colons, etc; no production code change)
 __refactor__: (refactoring production code, eg. renaming a variable)  
 __test__: (adding missing tests, refactoring tests; no production code change)  
 __chore__: (updating grunt tasks etc; no production code change)  
-
-## Environment
-NodeJS 16.13.*

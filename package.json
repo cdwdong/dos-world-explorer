@@ -70,6 +70,7 @@
       ]
     },
     "win": {
+      "verifyUpdateCodeSignature": false,
       "target": [
         "nsis"
       ]
@@ -90,22 +91,13 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "dos-dev-group",
+      "repo": "dos-world-explorer"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
-  },
-  "author": "Electron React Boilerplate Maintainers <electronreactboilerplate@gmail.com> (https://electron-react-boilerplate.js.org)",
-  "contributors": [
-    "Amila Welihinda <amilajack@gmail.com> (https://github.com/amilajack)",
-    "John Tran <jptran318@gmail.com> (https://github.com/jooohhn)"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "git+https://github.com/dos-dev-group/dos-world-explorer.git"
   },
   "keywords": [
     "electron",
@@ -118,7 +110,6 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
   "jest": {
     "testURL": "http://localhost/",
     "testEnvironment": "jsdom",
@@ -258,9 +249,6 @@
   "devEngines": {
     "node": ">=14.x",
     "npm": ">=7.x"
-  },
-  "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
   },
   "browserslist": [],
   "version": "0.18.22",
