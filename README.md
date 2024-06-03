@@ -1,5 +1,26 @@
 # DOS GANG VRC Explorer
 
+## 실행 사진
+### 월드 시트
+![월드시트탭](./docs/image/월드%20시트%20탭.png)
+![월드정보모달](docs/image/월드%20정보%20모달.png)
+![월드인스턴스생성모달](./docs/image/월드%20인스턴스%20생성%20모달.png)
+![인스턴스 초대](./docs/image/월드%20인스턴스%20그룹,%20친구%20초대.png)
+### 북마크
+![북마크탭](./docs/image/북마크%20탭.png)
+![북마크관리모달](./docs/image/북마크%20관리%20모달.png)
+### VRC
+![VRC 즐겨찾기 탭](./docs/image/VRC%20즐겨찾기%20탭.png)
+![VRC 탐색 탭](./docs/image/VRC%20탐색%20탭.png)
+### 파티 및 친구
+![친구 탭](./docs/image/친구%20탭.png)
+![파티 탭](./docs/image/파티%20탭.png)
+![파티 관리 모달](./docs/image/파티%20관리%20모달.png)
+### 로그인 화면
+![로그인화면](./docs/image/로그인화면.png)
+
+
+
 ## 프로젝트 실행
 
 `npm install` 후  
