@@ -88,7 +88,12 @@ export async function testEditSheet() {
 }
 
 export async function autoFile(worldUrl: string): Promise<WorldEditOutput> {
-  const worldId = worldUrl.replace('https://vrchat.com/home/world/', '');
+  const regex = /https:\/\/vrchat.com\/home\/world\/([a-zA-Z0-9-_]+)/g;
+  const worldUrlMatch = regex.exec(worldUrl);
+  if (worldUrlMatch === null) {
+    throw new Error('URL이 올바르지 않습니다.');
+  }
+  const worldId = worldUrlMatch[1];
   const worldData = await getWorldInfo(worldId);
   const nowTime = new Date();
   // console.log(worldId);
