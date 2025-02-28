@@ -251,6 +251,6 @@
     "npm": ">=7.x"
   },
   "browserslist": [],
-  "version": "0.18.22",
+  "version": "0.18.23",
   "main": ".eslintrc.js"
 }
