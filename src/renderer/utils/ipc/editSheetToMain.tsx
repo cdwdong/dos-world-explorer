@@ -61,16 +61,16 @@ export function getTagStyleDataToMain() {
   });
 }
 
-export function getSheetAuthToMain(): Promise<string> {
-  window.electron.ipcRenderer.sendMessage('getSheetAuthToMain', []);
-  return new Promise<string>((resolve, reject) => {
+export function getCanGetSheetAuthToMain(): Promise<boolean> {
+  window.electron.ipcRenderer.sendMessage('getCanGetSheetAuthToMain', []);
+  return new Promise<boolean>((resolve, reject) => {
     window.electron.ipcRenderer.once(
-      'getSheetAuthToRenderer',
+      'getCanGetSheetAuthToRenderer',
       (result: unknown) => {
         if (result === null) {
           reject(new NoDataError('No Data'));
         }
-        resolve(result as string);
+        resolve(result as boolean);
       },
     );
   });

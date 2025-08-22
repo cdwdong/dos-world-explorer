@@ -12,7 +12,7 @@ import {
   verify2FAcodeToMain,
   verify2FAEmailCodeToMain,
 } from '../utils/ipc/vrchatAPIToMain';
-import { getSheetAuthToMain } from '../utils/ipc/editSheetToMain';
+import { getCanGetSheetAuthToMain } from '../utils/ipc/editSheetToMain';
 
 // const USER_LOGIN_LOCALSTORAGE_KEY = 'USER_LOGIN';
 
@@ -65,9 +65,9 @@ export const useVrcCurrentUser = (): VrcCurrentUserHookMember => {
 
   useEffect(() => {
     if (isAdmin) return;
-    getSheetAuthToMain()
+    getCanGetSheetAuthToMain()
       .then((auth) => {
-        setIsAdmin(true);
+        setIsAdmin(auth);
       })
       .catch((reason) => {
         setIsAdmin(false);

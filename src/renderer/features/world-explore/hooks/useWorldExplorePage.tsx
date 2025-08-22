@@ -55,14 +55,15 @@ const useWorldExplorePage = (): HookMember => {
 
   const userHookMember = useVrcCurrentUser();
 
-  const getWorlds = useMemo(
-    () =>
-      userHookMember.currentAuthType === 'USER' ||
-      userHookMember.currentAuthType === 'MODERATOR'
-        ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
-        : getWorldDataToMain,
-    [userHookMember.currentAuthType],
-  );
+  const getWorlds = getWorldDataToMain;
+  // useMemo(
+  //   () =>
+  //     userHookMember.currentAuthType === 'USER' ||
+  //     userHookMember.currentAuthType === 'MODERATOR'
+  //       ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
+  //       : getWorldDataToMain,
+  //   [userHookMember.currentAuthType],
+  // );
 
   useEffect(() => {
     if (worldData === undefined) {

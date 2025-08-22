@@ -27,37 +27,58 @@ import { sheetInfos, spreadsheetId, adminEmailList } from './accountStrings';
 // sheet API 초기화
 let client: any;
 let keys: any = {};
-fs.readFile(
-  path.join(path.dirname(app.getPath('exe')), 'sheetAuth.json'),
-  'utf8',
-  (err, data) => {
-    if (err) {
-      console.warn('[WARN]', err.name, err.message);
-      return;
-    }
+let isAdmin: boolean = false;
+
+try {
+  const data = fs.readFileSync(
+    path.join(path.dirname(app.getPath('exe')), 'sheetAuth.json'),
+    'utf8'
+  );
+  keys = JSON.parse(data);
+  
+  client = new google.auth.JWT(keys.client_email, '', keys.private_key, [
+    'https://www.googleapis.com/auth/drive',
+    'https://www.googleapis.com/auth/drive.file',
+    'https://www.googleapis.com/auth/spreadsheets',
+  ]);
+  isAdmin = true;
+} catch (err: any) {
+  console.warn('[WARN]', err.name, err.message);
+  isAdmin = false;
+  
+  try {
+    const data = fs.readFileSync(
+      path.join(path.dirname(app.getPath('exe')), 'vrce-public-api-key.json'),
+      'utf8'
+    );
     keys = JSON.parse(data);
 
     client = new google.auth.JWT(keys.client_email, '', keys.private_key, [
-      'https://www.googleapis.com/auth/drive',
-      'https://www.googleapis.com/auth/drive.file',
       'https://www.googleapis.com/auth/spreadsheets',
     ]);
-  },
-);
+  } catch (err: any) {
+    console.warn('[WARN]', err.name, err.message);
+  }
+}
 
-export function getSheetAuth() {
+export function getCanGetSheetAuth() {
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      path.join(path.dirname(app.getPath('exe')), 'sheetAuth.json'),
-      'utf8',
-      (err, data) => {
-        if (err) {
-          console.warn('[WARN]', err.name, err.message);
-          reject(err);
-        }
-        resolve(data);
-      },
-    );
+    // fs.readFile(
+    //   path.join(path.dirname(app.getPath('exe')), 'sheetAuth.json'),
+    //   'utf8',
+    //   (err, data) => {
+    //     if (err) {
+    //       console.warn('[WARN]', err.name, err.message);
+    //       reject(err);
+    //     }
+    //     resolve(data);
+    //   },
+    // );
+    if (isAdmin) {
+      resolve(true);
+    } else {
+      resolve(false);
+    }
   });
 }
 

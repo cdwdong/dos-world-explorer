@@ -43,14 +43,15 @@ const useWorldFavoritePage = (): HookMember => {
   const favoritedWorldHookMember = useFavoritedWorld();
   const userHookMember = useVrcCurrentUser();
 
-  const getWorlds = useMemo(
-    () =>
-      userHookMember.currentAuthType === 'USER' ||
-      userHookMember.currentAuthType === 'MODERATOR'
-        ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
-        : getWorldDataToMain,
-    [userHookMember.currentAuthType],
-  );
+  const getWorlds = getWorldDataToMain;
+  // useMemo(
+  //   () =>
+  //     userHookMember.currentAuthType === 'USER' ||
+  //     userHookMember.currentAuthType === 'MODERATOR'
+  //       ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
+  //       : getWorldDataToMain,
+  //   [userHookMember.currentAuthType],
+  // );
 
   const favoriteTabs = useMemo(
     () =>

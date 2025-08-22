@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { World, WorldData, TagStyle } from '@src/types';
 import { NoDataError } from './error';
 
@@ -86,7 +86,7 @@ export default function getSheetWorldData(privateVisible = false) {
       return worldData;
     })
     .catch((reason) => {
-      if (reason instanceof AxiosError) {
+      if (axios.isAxiosError(reason)) {
         console.warn('Error: Fail Fetch html', reason);
       } else if (reason instanceof NoDataError) {
         console.warn('Error: Success Fetch html but No Data', reason);
@@ -124,7 +124,7 @@ export function getTagStyles() {
       return tagStyles;
     })
     .catch((reason) => {
-      if (reason instanceof AxiosError) {
+      if (axios.isAxiosError(reason)) {
         console.warn('Error: Fail Fetch html', reason);
       } else if (reason instanceof NoDataError) {
         console.warn('Error: Success Fetch html but No Data', reason);

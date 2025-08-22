@@ -28,6 +28,8 @@
 
 ## 관리자 권한모드 이용시
 `dos-world-explorer\node_modules\electron\dist\` 경로에 키파일 (`sheetAuth.json`)을 넣고 사용할 것
+## 일반유저 모드 이용시에도
+`dos-world-explorer\node_modules\electron\dist\` 경로에 키파일 (`vrce-public-api-key.json`)을 넣고 사용할 것
 
 ## GITHUB FLOW
 1. 현 프로젝트를 [깃허브(링크)](https://github.com/dos-dev-group/dos-world-explorer)에서 자기 개인 계정으로 fork 한다.

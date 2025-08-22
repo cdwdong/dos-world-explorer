@@ -65,14 +65,15 @@ const useBookmarkPage = (): HookMember => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   // const bookmarks = useMemo(() => favorites, [worldData]);
 
-  const getWorlds = useMemo(
-    () =>
-      userHookMember.currentAuthType === 'USER' ||
-      userHookMember.currentAuthType === 'MODERATOR'
-        ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
-        : getWorldDataToMain,
-    [userHookMember.currentAuthType],
-  );
+  const getWorlds = getWorldDataToMain;
+  // useMemo(
+  //   () =>
+  //     userHookMember.currentAuthType === 'USER' ||
+  //     userHookMember.currentAuthType === 'MODERATOR'
+  //       ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
+  //       : getWorldDataToMain,
+  //   [userHookMember.currentAuthType],
+  // );
 
   useEffect(() => {
     if (!bookmarks) return;

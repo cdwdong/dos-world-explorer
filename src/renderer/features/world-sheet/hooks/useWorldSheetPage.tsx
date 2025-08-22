@@ -63,14 +63,15 @@ const useWorldSheetPage = (): HookMember => {
   const [curSearchOption, setCurSearchOption] =
     useState<SearchOptions[number]>('NAME');
 
-  const getWorlds = useMemo(
-    () =>
-      userHookMember.currentAuthType === 'USER' ||
-      userHookMember.currentAuthType === 'MODERATOR'
-        ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
-        : getWorldDataToMain,
-    [userHookMember.currentAuthType],
-  );
+  const getWorlds = getWorldDataToMain;
+  // useMemo(
+  //   () =>
+  //     userHookMember.currentAuthType === 'USER' ||
+  //     userHookMember.currentAuthType === 'MODERATOR'
+  //       ? () => getSheetWorldData(userHookMember.currentAuthType !== 'USER')
+  //       : getWorldDataToMain,
+  //   [userHookMember.currentAuthType],
+  // );
   useEffect(() => {
     if (worldData === undefined) {
       getWorlds().then((data) => {
