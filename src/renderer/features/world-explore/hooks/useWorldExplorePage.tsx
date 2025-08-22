@@ -15,7 +15,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { LimitedWorld } from 'vrchat';
 import { useVrcCurrentUser } from '@src/renderer/data/user';
-import getSheetWorldData from '@src/renderer/utils/getSheetWorldData';
 
 export type TabKey = 'new' | 'lab' | 'recent';
 

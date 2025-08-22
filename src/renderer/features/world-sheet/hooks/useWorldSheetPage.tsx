@@ -2,7 +2,6 @@
 /* eslint-disable array-callback-return */
 import { useVrcCurrentUser } from '@src/renderer/data/user';
 import { worldDataState } from '@src/renderer/data/world';
-import getSheetWorldData from '@src/renderer/utils/getSheetWorldData';
 import {
   addEditSheetToMain,
   getWorldDataToMain,

@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import getSheetWorldData from '@src/renderer/utils/getSheetWorldData';
-import { addEditSheet, printTest } from '@src/main/utils/editSheet';
 import { World, WorldData } from '@src/types';
 import App from '../renderer/App';
 
@@ -13,13 +11,13 @@ describe('App', () => {
   });
 });
 
-describe('getSheetWorldData', () => {
-  it('crawling world sheet', async () => {
-    return getSheetWorldData()
-      .then((result) => console.log('result', result))
-      .catch((err) => console.log('error', err));
-  });
-});
+// describe('getSheetWorldData', () => {
+//   it('crawling world sheet', async () => {
+//     return getSheetWorldData()
+//       .then((result) => console.log('result', result))
+//       .catch((err) => console.log('error', err));
+//   });
+// });
 
 // describe('addEditSheet', () => {
 //   const testworld: World = {

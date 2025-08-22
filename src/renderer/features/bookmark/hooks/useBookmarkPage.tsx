@@ -1,7 +1,6 @@
 import { worldBookmarksState } from '@src/renderer/data/bookmarks';
 import { worldDataState } from '@src/renderer/data/world';
 import copyDeep from '@src/renderer/utils/copyDeep';
-import getSheetWorldData from '@src/renderer/utils/getSheetWorldData';
 import {
   showLoadFileDialog,
   showSaveFileDialog,
